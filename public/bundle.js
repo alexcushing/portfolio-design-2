@@ -63082,7 +63082,9 @@ var Terminal = function (_Component) {
                 _react2.default.createElement(
                   "span",
                   { className: "term-text" },
-                  "Welcome to my new portfolio!"
+                  "Welcome to my new portfolio!",
+                  _react2.default.createElement("br", null),
+                  "I am a full stack engineer from the Boston area."
                 ),
                 _react2.default.createElement("br", null),
                 _react2.default.createElement(

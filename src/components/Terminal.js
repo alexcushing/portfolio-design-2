@@ -56,7 +56,8 @@ class Terminal extends Component {
                     <span className="run">./Alex_Cushing</span>
                     <br />
                     <span className="term-text">
-                      Welcome to my new portfolio!
+                      Welcome to my new portfolio!<br />
+                      I am a full stack engineer from the Boston area. 
                     </span>
                     <br />
                     <span className="term-text">
