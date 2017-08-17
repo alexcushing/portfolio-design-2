@@ -36,7 +36,6 @@ class Nav extends Component {
   };
 
   select = value => {
-    console.log("hey val: ", value);
     if (value) {
       this.state.menuItems.includes(value.name)
         ? this.setState({ selected: value.name })

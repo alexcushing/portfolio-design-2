@@ -28,11 +28,12 @@ const ProjCont = () =>
         other={{link: 'https://github.com/alexcushing/roomio', location:''}}
       />
       <Card
-        name="other"
-        desc="sample text about proj"
-        photoLink=""
+        name="Admin Portal"
+        desc="While working as a co-op at Putnam Investments, I worked on a single page application for administration users to access multiple tables. The page displayed necessary information cleanly, and allowed administrative users to edit, add, or delete information seamlessly."
+        photoLink="https://image.flaticon.com/icons/svg/204/204296.svg"
         color="orange"
         hover={true}
+        otherInfo={{tech : ['JavaScript', 'JQuery' ,'Django', 'CSS']}}
         cardWhite={true}
         other={{link: '', location:''}}
       />

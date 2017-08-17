@@ -9,7 +9,6 @@ class Contact extends Component {
   };
 
   onChange = e => {
-    console.log(e.target);
     let type = e.target.name;
     let value = e.target.value;
     this.setState({ [type]: value });

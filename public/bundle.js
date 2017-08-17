@@ -32812,11 +32812,12 @@ var ProjCont = function ProjCont() {
         other: { link: 'https://github.com/alexcushing/roomio', location: '' }
       }),
       _react2.default.createElement(_Card2.default, {
-        name: "other",
-        desc: "sample text about proj",
-        photoLink: "",
+        name: "Admin Portal",
+        desc: "While working as a co-op at Putnam Investments, I worked on a single page application for administration users to access multiple tables. The page displayed necessary information cleanly, and allowed administrative users to edit, add, or delete information seamlessly.",
+        photoLink: "https://image.flaticon.com/icons/svg/204/204296.svg",
         color: "orange",
         hover: true,
+        otherInfo: { tech: ['JavaScript', 'JQuery', 'Django', 'CSS'] },
         cardWhite: true,
         other: { link: '', location: '' }
       })
@@ -65071,7 +65072,7 @@ exports.default = ReactStars;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(1);
@@ -65085,50 +65086,52 @@ var _Card2 = _interopRequireDefault(_Card);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ExpCont = function ExpCont() {
-    return _react2.default.createElement(
+  return _react2.default.createElement(
+    "div",
+    { className: "experience-container-outer" },
+    _react2.default.createElement(
+      "div",
+      { className: "header-title" },
+      _react2.default.createElement(
         "div",
-        { className: "experience-container-outer" },
+        null,
+        "Professional ",
         _react2.default.createElement(
-            "div",
-            { className: "header-title" },
-            _react2.default.createElement(
-                "div",
-                null,
-                "Professional ",
-                _react2.default.createElement(
-                    "span",
-                    { className: "bold" },
-                    "Experience"
-                )
-            )
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "exp-cards" },
-            _react2.default.createElement(_Card2.default, {
-                cardWhite: false,
-                name: "Putnam Investments",
-                desc: "Worked in web and software development creating interfaces for data manipulation, python cycles for automating work tasks, ETL jobs, and more.",
-                photoLink: "https://i.imgur.com/Bhsk273.png",
-                color: "blue",
-                subtitle: "Software Engineering Co-op",
-                otherInfo: { tech: ['JavaScript', 'Python/Django', 'JQuery', 'SCSS', 'SQL', 'HTML'] },
-                hover: false,
-                other: { location: 'Andover, MA', link: '' }
-            }),
-            _react2.default.createElement(_Card2.default, {
-                cardWhite: false,
-                name: "Putnam Investments",
-                desc: "Worked on the mobile team developing internal applications. Built a framework or reusable components and a testing application for this framework.",
-                photoLink: "https://i.imgur.com/Bhsk273.png",
-                color: "blue",
-                subtitle: "Mobile Developer Internship",
-                otherInfo: { tech: ['Swift', 'Objective C'] },
-                hover: false,
-                other: { location: 'Boston, MA', link: '' }
-            })
+          "span",
+          { className: "bold" },
+          "Experience"
         )
-    );
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { className: "exp-cards" },
+      _react2.default.createElement(_Card2.default, {
+        cardWhite: false,
+        name: "Putnam Investments",
+        desc: "Worked in web and software development creating interfaces for data manipulation, python cycles for automating work tasks, ETL jobs, and more.",
+        photoLink: "https://i.imgur.com/Bhsk273.png",
+        color: "blue",
+        subtitle: "Software Engineering Co-op",
+        otherInfo: {
+          tech: ["JavaScript", "Python/Django", "JQuery", "SCSS", "SQL", "HTML"]
+        },
+        hover: false,
+        other: { location: "Andover, MA", link: "" }
+      }),
+      _react2.default.createElement(_Card2.default, {
+        cardWhite: false,
+        name: "Putnam Investments",
+        desc: "Worked on the mobile team developing internal applications. Built a framework or reusable components and a testing application for this framework.",
+        photoLink: "https://i.imgur.com/Bhsk273.png",
+        color: "blue",
+        subtitle: "Mobile Developer Internship",
+        otherInfo: { tech: ["Swift", "Objective C"] },
+        hover: false,
+        other: { location: "Boston, MA", link: "" }
+      })
+    )
+  );
 };
 
 exports.default = ExpCont;
@@ -65237,7 +65240,6 @@ var Nav = function (_Component) {
     }, _this.closeModal = function () {
       _this.setState({ modalIsOpen: false });
     }, _this.select = function (value) {
-      console.log("hey val: ", value);
       if (value) {
         _this.state.menuItems.includes(value.name) ? _this.setState({ selected: value.name }) : console.log("error");
         if (value.name == "Contact") {
@@ -68508,7 +68510,6 @@ var Contact = function (_Component) {
       ln: "",
       msg: ""
     }, _this.onChange = function (e) {
-      console.log(e.target);
       var type = e.target.name;
       var value = e.target.value;
       _this.setState(_defineProperty({}, type, value));
