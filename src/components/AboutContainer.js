@@ -2,7 +2,7 @@ import React from "react";
 import { Image } from "semantic-ui-react";
 import Terminal from "./Terminal";
 
-const AbtCont = ({ visibSense }) =>
+const AbtCont = () =>
   <div className="about-outer-cont">
     <Terminal />
   </div>;

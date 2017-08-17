@@ -57,19 +57,15 @@ class Terminal extends Component {
                     <br />
                     <span className="term-text">
                       Welcome to my new portfolio!<br />
-                      I am a full stack engineer from the Boston area. 
+                      I am a front end engineer from the Boston area. 
                     </span>
                     <br />
                     <span className="term-text">
-                      checkout my current live{" "}
-                      <a href="http://www.alexcushing.com" target="_blank">
-                        <u>portfolio</u>
-                      </a>
-                      ,{" "}
+                      checkout my{" "}
                       <a href="https://github.com/alexcushing" target="_blank">
                         <u>Github</u>
                       </a>
-                      , and{" "}
+                       {" "}and{" "}
                       <a
                         href="https://www.linkedin.com/in/alexandercushing/"
                         target="_blank"
@@ -96,3 +92,4 @@ class Terminal extends Component {
 }
 
 export default Terminal;
+
