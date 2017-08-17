@@ -274,6 +274,14 @@ body {
   }
 }
 
+.ReactModal__Content .ReactModal__Content--after-open {
+  @media screen and (max-width: $other-tablet) {
+    top: 7%;
+    left: 7%;
+    right: 7%;
+    bottom: 7%;
+  }
+}
 
 
 

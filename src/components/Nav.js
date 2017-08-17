@@ -6,10 +6,10 @@ import Contact from "./Contact";
 
 const customStyles = {
   content: {
-    top: "20%",
-    left: "25%",
-    right: "25%",
-    bottom: "20%"
+    top: "9%",
+    left: "9%",
+    right: "9%",
+    bottom: "9%"
   }
 };
 
@@ -70,6 +70,7 @@ class Nav extends Component {
           style={customStyles}
           contentLabel="Modal"
         >
+        <h3>Write me a message!</h3>
           <Button onClick={this.closeModal} icon="window close" />
           <br />
           <br />
