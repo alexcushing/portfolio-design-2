@@ -48,6 +48,7 @@ body {
 .card-other {
   display: flex;
   text-align: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -156,6 +157,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-size: 24px;
+  flex-wrap: wrap;
   overflow-x: auto;
 }
 
@@ -381,6 +383,9 @@ body {
 
 .term-text {
   font-size: .85em;
+  @media screen and (max-width: $other-tablet) {
+      font-size: 14px;
+    }
 }
 
 .term-text a:visited, .term-text a {
@@ -410,6 +415,10 @@ body {
   border-radius: 10px;
   border: 0px;
   background: rgb(0%, 1.8%, 21.8%);
+  @media screen and (max-width: $other-tablet) {
+     width: 70%;
+     height: 50%;
+    }
 }
 
 .term-container-full {

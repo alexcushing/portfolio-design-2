@@ -51,7 +51,7 @@ class Terminal extends Component {
                     -
                   </span>
                 </div>
-                <Typist stdTypingDelay={1}>
+                <Typist stdTypingDelay={.5}>
                   <div name="term" id="term-textarea" className="term-textarea">
                     <span className="run">./Alex_Cushing</span>
                     <br />
