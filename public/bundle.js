@@ -15814,13 +15814,17 @@ var Card = function Card(_ref) {
       color = _ref.color,
       subtitle = _ref.subtitle,
       hover = _ref.hover,
-      cardWhite = _ref.cardWhite;
+      cardWhite = _ref.cardWhite,
+      otherInfo = _ref.otherInfo,
+      other = _ref.other;
   return _react2.default.createElement(
     "div",
     null,
     cardWhite ? _react2.default.createElement(
       "div",
-      { className: hover ? "header-card hover-card card-white" : "header-card card-white" },
+      {
+        className: hover ? "header-card hover-card card-white" : "header-card card-white"
+      },
       subtitle ? _react2.default.createElement(
         _semanticUiReact.Label,
         { as: "span", color: color, ribbon: true },
@@ -15833,17 +15837,53 @@ var Card = function Card(_ref) {
         _react2.default.createElement(
           _semanticUiReact.Header.Content,
           null,
-          name
+          _react2.default.createElement(
+            "div",
+            { className: "inline-link" },
+            other.link.length != 0 ? _react2.default.createElement(
+              "a",
+              { href: other.link, target: "_blank" },
+              _react2.default.createElement(_semanticUiReact.Icon, { name: "linkify" })
+            ) : null,
+            other.location.length != 0 ? _react2.default.createElement(
+              "div",
+              null,
+              name,
+              _react2.default.createElement("br", null),
+              _react2.default.createElement(
+                "h3",
+                null,
+                other.location
+              )
+            ) : _react2.default.createElement(
+              "div",
+              null,
+              name
+            )
+          )
         )
       ),
       _react2.default.createElement(
         "div",
         { className: "subheader" },
         desc
-      )
+      ),
+      otherInfo ? _react2.default.createElement(
+        "div",
+        { className: "card-other" },
+        otherInfo.tech.length != 0 ? otherInfo.tech.map(function (name, key) {
+          return _react2.default.createElement(
+            "div",
+            { className: "tech-name", key: key },
+            name
+          );
+        }) : null
+      ) : null
     ) : _react2.default.createElement(
       "div",
-      { className: hover ? "header-card hover-card card-offwhite" : "header-card card-offwhite" },
+      {
+        className: hover ? "header-card hover-card card-offwhite" : "header-card card-offwhite"
+      },
       subtitle ? _react2.default.createElement(
         _semanticUiReact.Label,
         { as: "span", color: color, ribbon: true },
@@ -15856,14 +15896,48 @@ var Card = function Card(_ref) {
         _react2.default.createElement(
           _semanticUiReact.Header.Content,
           null,
-          name
+          _react2.default.createElement(
+            "div",
+            { className: "inline-link" },
+            other.link.length != 0 ? _react2.default.createElement(
+              "a",
+              { href: other.link, target: "_blank" },
+              _react2.default.createElement(_semanticUiReact.Icon, { name: "linkify" })
+            ) : null,
+            other.location.length != 0 ? _react2.default.createElement(
+              "div",
+              null,
+              name,
+              _react2.default.createElement("br", null),
+              _react2.default.createElement(
+                "h3",
+                null,
+                other.location
+              )
+            ) : _react2.default.createElement(
+              "div",
+              null,
+              name
+            )
+          )
         )
       ),
       _react2.default.createElement(
         "div",
         { className: "subheader" },
         desc
-      )
+      ),
+      otherInfo ? _react2.default.createElement(
+        "div",
+        { className: "card-other" },
+        otherInfo.tech.length != 0 ? otherInfo.tech.map(function (name, key) {
+          return _react2.default.createElement(
+            "div",
+            { className: "tech-name", key: key },
+            name
+          );
+        }) : null
+      ) : null
     )
   );
 };
@@ -32086,7 +32160,7 @@ exports = module.exports = __webpack_require__(473)(undefined);
 
 
 // module
-exports.push([module.i, "/*#00897b;*/\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n.card-offwhite {\n  background: #f7f7f9; }\n\n.card-white {\n  background: white; }\n\n.card-outer {\n  display: flex;\n  justify-content: center;\n  background: #f7f7f9;\n  padding: 0 15vw 0 15vw;\n  align-items: center;\n  overflow-x: auto; }\n\n.proj-title {\n  padding-left: 15vw; }\n\n.card-outer-container {\n  display: flex;\n  min-height: 100vh;\n  justify-content: center;\n  flex-direction: column;\n  background: #f7f7f9; }\n\n.subheader {\n  text-align: distribute;\n  padding: 3px; }\n\n.title {\n  z-index: 10;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  background: clear;\n  width: 100%;\n  font-size: 18px;\n  color: black; }\n  @media screen and (max-width: 790px) {\n    .title {\n      position: inherit;\n      background: #f7f7f9; } }\n\n.left {\n  align-self: center; }\n\n.right {\n  flex: 1; }\n\n.menu-list {\n  display: flex;\n  justify-content: flex-end;\n  list-style: none;\n  margin: 0; }\n\n.menu-list-item {\n  padding: 0 5px 0 5px;\n  cursor: pointer;\n  text-decoration: none;\n  color: black; }\n\n.header-card {\n  transition: .2s ease;\n  cursor: default;\n  margin: 15px 15px 50px 15px;\n  display: flex;\n  min-height: 350px;\n  min-width: 300px;\n  flex-direction: column;\n  padding: 25px 10px 60px 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }\n\n.hover-card:hover {\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  transform: scale(1.01); }\n\n.title-header {\n  padding: 10px;\n  padding-top: 60px;\n  font-size: 34px;\n  padding-left: 12%; }\n\n.colored {\n  color: black;\n  background: #f7f7f9; }\n\n.bold {\n  font-weight: bold; }\n\n.selected {\n  text-decoration: underline; }\n\n.back-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 0%); }\n\n.front-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%); }\n\n.skill-item {\n  display: flex;\n  justify-content: space-between;\n  font-size: 24px;\n  overflow-x: auto; }\n\n.skill-rating {\n  margin: 15px;\n  white-space: nowrap;\n  display: inline-block;\n  overflow: auto; }\n\n.skill-name {\n  margin: 15px; }\n\n.skills-outer {\n  margin: 0 auto;\n  min-height: calc(100vh - 30px);\n  width: 70vw;\n  white-space: nowrap;\n  overflow-x: auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 40px; }\n  @media screen and (max-width: 890px) {\n    .skills-outer {\n      width: 70%; } }\n\n.skills-list {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 70%; }\n\n.skills-title {\n  width: 100%; }\n\n.about-outer-cont {\n  background: #f7f7f9;\n  min-height: calc(100vh - 30px);\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n.about-outer {\n  background: #f7f7f9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: black;\n  font-size: 24px;\n  padding: 5px 5px 50px 5px; }\n\n.about-info {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start; }\n\n.about-info-item {\n  padding: 10px; }\n\n.about-blurb {\n  margin: 0 auto;\n  width: 30%;\n  padding-bottom: 50px;\n  background: #f7f7f9;\n  color: black;\n  min-width: 200px; }\n  @media screen and (max-width: 890px) {\n    .about-blurb {\n      width: 50%; } }\n  @media screen and (max-width: 790px) {\n    .about-blurb {\n      width: 80%; } }\n\n.hard-center {\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 10px;\n  height: 10px; }\n\n.ribbon {\n  width: 30%;\n  font-size: 16px; }\n\n.ui.form .fields > .field {\n  width: 100%; }\n\n.ReactModal__Overlay .ReactModal__Overlay--after-open {\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  background-color: rgba(255, 255, 255, 0.44902); }\n\n.ReactModalPortal div {\n  z-index: 999; }\n\n.experience-container-outer {\n  margin: 0 auto;\n  min-height: 100vh;\n  width: 70vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.exp-cards {\n  display: flex;\n  justify-content: center; }\n\n.header-title {\n  margin: 20px;\n  font-size: 24px; }\n\n/*terminal*/\n.Term-App {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  align-content: center; }\n\n@keyframes blink {\n  0% {\n    opacity: 1; }\n  49% {\n    opacity: 1; }\n  50% {\n    opacity: 0; }\n  100% {\n    opacity: 0; } }\n\n.bubble {\n  position: absolute;\n  bottom: 25px;\n  right: 50%;\n  z-index: 998;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00192d+0,000f75+100 */\n  background: #00192d;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to bottom, #00192d 0%, #000f75 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00192d', endColorstr='#000f75',GradientType=0 );\n  /* IE6-9 */\n  color: white;\n  width: 40px;\n  height: 30px;\n  transition: .3s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.bubbleBig {\n  position: absolute;\n  bottom: calc(100% - 650px);\n  right: calc(50% - 400px);\n  background-color: #000538;\n  color: white;\n  width: 800px;\n  height: 500px;\n  transition: .15s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.term-text {\n  font-size: .85em; }\n\n.term-text a:visited, .term-text a {\n  color: white; }\n\n.bubble:hover {\n  bottom: 35px;\n  transform: scale(1.3);\n  transition: .3s ease; }\n\n.run {\n  color: #ff6b6b;\n  margin-bottom: 5px; }\n\n.term-container {\n  color: white;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 600px;\n  height: 400px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  transition: .15s ease;\n  border-radius: 10px;\n  border: 0px;\n  background: #000538; }\n\n.term-container-full {\n  align-self: center;\n  transition: .15s ease;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 100vw;\n  height: 100vh;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  border-radius: 10px;\n  background: #000538; }\n\n.term-container-small {\n  transition: .15s ease;\n  align-self: flex-end;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  overflow: hidden;\n  margin-top: 40px;\n  width: 40px;\n  height: 30px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  border-radius: 10px;\n  background: #000538;\n  margin-bottom: 25px; }\n\n.status-bar {\n  cursor: move;\n  height: 25px;\n  border-radius: 9px 9px 0 0;\n  background: gainsboro;\n  border: 3px solid #c7c7c7;\n  color: rgba(255, 255, 255, 0);\n  border: none;\n  display: flex;\n  padding: 3px; }\n\n.bar-button {\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n  text-align: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer; }\n\n.status-bar:hover {\n  color: black; }\n\n.x-out {\n  background: indianred; }\n\n.minus-down {\n  background: gold; }\n\n.expand {\n  background-color: green; }\n\n.Cursor {\n  display: none; }\n\n.term-textarea::after {\n  content: \"_\";\n  color: grey;\n  font-weight: bold;\n  animation: blink .8s infinite; }\n\n.term-textarea::before {\n  content: \"> \";\n  color: grey; }\n\n.term-textarea {\n  flex: 1;\n  font-family: Consolas, monaco, monospace;\n  padding: 20px;\n  line-height: 1.5em;\n  font-size: 1.5em;\n  height: 100%;\n  border: none;\n  background: #000538;\n  border-radius: 10px;\n  color: white;\n  border: none;\n  width: 100%; }\n", ""]);
+exports.push([module.i, "/*#00897b;*/\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n.card-offwhite {\n  background: #f7f7f9; }\n\n.card-white {\n  background: white; }\n\n.card-outer {\n  display: flex;\n  justify-content: center;\n  background: #f7f7f9;\n  padding: 0 15vw 0 15vw;\n  align-items: center;\n  overflow-x: auto; }\n  @media screen and (max-width: 890px) {\n    .card-outer {\n      flex-direction: column; } }\n\n.proj-title {\n  padding-left: 15vw; }\n\n.card-outer-container {\n  display: flex;\n  min-height: 100vh;\n  justify-content: center;\n  flex-direction: column;\n  background: #f7f7f9; }\n\n.card-other {\n  display: flex;\n  text-align: center;\n  width: 100%; }\n\n.tech-name {\n  margin: 3px;\n  text-align: center; }\n\n.subheader {\n  text-align: distribute;\n  padding: 3px; }\n\n.title {\n  z-index: 10;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  background: clear;\n  width: 100%;\n  font-size: 18px;\n  color: black; }\n  @media screen and (max-width: 790px) {\n    .title {\n      position: inherit;\n      background: #f7f7f9; } }\n\n.left {\n  align-self: center; }\n\n.right {\n  flex: 1; }\n\n.menu-list {\n  display: flex;\n  justify-content: flex-end;\n  list-style: none;\n  margin: 0; }\n\n.menu-list-item {\n  padding: 0 5px 0 5px;\n  cursor: pointer;\n  text-decoration: none;\n  color: black; }\n\n.header-card {\n  transition: .2s ease;\n  cursor: default;\n  margin: 15px 15px 50px 15px;\n  display: flex;\n  min-height: 350px;\n  min-width: 300px;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 25px 10px 25px 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }\n\n.hover-card:hover {\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  transform: scale(1.01); }\n\n.title-header {\n  padding: 10px;\n  padding-top: 60px;\n  font-size: 34px;\n  padding-left: 12%; }\n\n.colored {\n  color: black;\n  background: #f7f7f9; }\n\n.bold {\n  font-weight: bold; }\n\n.selected {\n  text-decoration: underline; }\n\n.back-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 0%); }\n\n.front-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%); }\n\n.skill-item {\n  display: flex;\n  justify-content: space-between;\n  font-size: 24px;\n  overflow-x: auto; }\n\n.skill-rating {\n  margin: 15px;\n  white-space: nowrap;\n  display: inline-block;\n  overflow: auto; }\n\n.skill-name {\n  margin: 15px; }\n\n.skills-outer {\n  margin: 0 auto;\n  min-height: calc(100vh - 30px);\n  width: 70vw;\n  white-space: nowrap;\n  overflow-x: auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 40px; }\n  @media screen and (max-width: 890px) {\n    .skills-outer {\n      width: 70%; } }\n\n.skills-list {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 70%; }\n\n.skills-title {\n  width: 100%; }\n\n.about-outer-cont {\n  background: #f7f7f9;\n  min-height: calc(100vh - 30px);\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n.about-outer {\n  background: #f7f7f9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: black;\n  font-size: 24px;\n  padding: 5px 5px 50px 5px; }\n\n.about-info {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start; }\n\n.about-info-item {\n  padding: 10px; }\n\n.about-blurb {\n  margin: 0 auto;\n  width: 30%;\n  padding-bottom: 50px;\n  background: #f7f7f9;\n  color: black;\n  min-width: 200px; }\n  @media screen and (max-width: 890px) {\n    .about-blurb {\n      width: 50%; } }\n  @media screen and (max-width: 790px) {\n    .about-blurb {\n      width: 80%; } }\n\n.hard-center {\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 10px;\n  height: 10px; }\n\n.ribbon {\n  width: 30%;\n  font-size: 16px; }\n\n.ui.form .fields > .field {\n  width: 100%; }\n\n.ReactModal__Overlay .ReactModal__Overlay--after-open {\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  background-color: rgba(255, 255, 255, 0.44902); }\n\n.ReactModalPortal div {\n  z-index: 999; }\n\n.experience-container-outer {\n  margin: 0 auto;\n  min-height: 100vh;\n  width: 70vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.exp-cards {\n  display: flex;\n  justify-content: center; }\n  @media screen and (max-width: 790px) {\n    .exp-cards {\n      flex-direction: column; } }\n\n.header-title {\n  margin: 20px;\n  font-size: 24px; }\n\n.ui.icon.header .icon {\n  font-size: 16px;\n  margin-right: 5px;\n  color: black; }\n\n.inline-link {\n  display: flex;\n  align-items: baseline; }\n\n/*terminal*/\n.Term-App {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  align-content: center; }\n\n@keyframes blink {\n  0% {\n    opacity: 1; }\n  49% {\n    opacity: 1; }\n  50% {\n    opacity: 0; }\n  100% {\n    opacity: 0; } }\n\n.bubble {\n  position: absolute;\n  bottom: 25px;\n  right: 50%;\n  z-index: 998;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00192d+0,000f75+100 */\n  background: #00192d;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to bottom, #00192d 0%, #000f75 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00192d', endColorstr='#000f75',GradientType=0 );\n  /* IE6-9 */\n  color: white;\n  width: 40px;\n  height: 30px;\n  transition: .3s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.bubbleBig {\n  position: absolute;\n  bottom: calc(100% - 650px);\n  right: calc(50% - 400px);\n  background-color: #000538;\n  color: white;\n  width: 800px;\n  height: 500px;\n  transition: .15s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.term-text {\n  font-size: .85em; }\n\n.term-text a:visited, .term-text a {\n  color: white; }\n\n.bubble:hover {\n  bottom: 35px;\n  transform: scale(1.3);\n  transition: .3s ease; }\n\n.run {\n  color: #ff6b6b;\n  margin-bottom: 5px; }\n\n.term-container {\n  color: white;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 600px;\n  height: 400px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  transition: .15s ease;\n  border-radius: 10px;\n  border: 0px;\n  background: #000538; }\n\n.term-container-full {\n  align-self: center;\n  transition: .15s ease;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 100vw;\n  height: 100vh;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  border-radius: 10px;\n  background: #000538; }\n\n.term-container-small {\n  transition: .15s ease;\n  align-self: flex-end;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  overflow: hidden;\n  margin-top: 40px;\n  width: 40px;\n  height: 30px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  border-radius: 10px;\n  background: #000538;\n  margin-bottom: 25px; }\n\n.status-bar {\n  cursor: move;\n  height: 25px;\n  border-radius: 9px 9px 0 0;\n  background: gainsboro;\n  border: 3px solid #c7c7c7;\n  color: rgba(255, 255, 255, 0);\n  border: none;\n  display: flex;\n  padding: 3px; }\n\n.bar-button {\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n  text-align: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer; }\n\n.status-bar:hover {\n  color: black; }\n\n.x-out {\n  background: indianred; }\n\n.minus-down {\n  background: gold; }\n\n.expand {\n  background-color: green; }\n\n.Cursor {\n  display: none; }\n\n.term-textarea::after {\n  content: \"_\";\n  color: grey;\n  font-weight: bold;\n  animation: blink .8s infinite; }\n\n.term-textarea::before {\n  content: \"> \";\n  color: grey; }\n\n.term-textarea {\n  flex: 1;\n  font-family: Consolas, monaco, monospace;\n  padding: 20px;\n  line-height: 1.5em;\n  font-size: 1.5em;\n  height: 100%;\n  border: none;\n  background: #000538;\n  border-radius: 10px;\n  color: white;\n  border: none;\n  width: 100%; }\n", ""]);
 
 // exports
 
@@ -32723,7 +32797,9 @@ var ProjCont = function ProjCont() {
         photoLink: "http://www.prsmphoto.com/img/templogo.png",
         color: "teal",
         hover: true,
-        cardWhite: true
+        cardWhite: true,
+        otherInfo: { tech: ['MongoDB', 'Express.js', 'JQuery', 'Node.js', 'JavaScript', 'SCSS'] },
+        other: { link: 'http://prsmphoto.com', location: '' }
       }),
       _react2.default.createElement(_Card2.default, {
         name: "roomio",
@@ -32731,7 +32807,9 @@ var ProjCont = function ProjCont() {
         photoLink: "https://i.imgur.com/NDUQHZm.jpg",
         color: "red",
         hover: true,
-        cardWhite: true
+        cardWhite: true,
+        otherInfo: { tech: ['React.js', 'Laravel', 'SCSS', 'Socket.io', 'MySQL'] },
+        other: { link: 'https://github.com/alexcushing/roomio', location: '' }
       }),
       _react2.default.createElement(_Card2.default, {
         name: "other",
@@ -32739,7 +32817,8 @@ var ProjCont = function ProjCont() {
         photoLink: "",
         color: "orange",
         hover: true,
-        cardWhite: true
+        cardWhite: true,
+        other: { link: '', location: '' }
       })
     )
   );
@@ -65033,7 +65112,9 @@ var ExpCont = function ExpCont() {
                 photoLink: "https://i.imgur.com/Bhsk273.png",
                 color: "blue",
                 subtitle: "Software Engineering Co-op",
-                hover: false
+                otherInfo: { tech: ['JavaScript', 'Python/Django', 'JQuery', 'SCSS', 'SQL', 'HTML'] },
+                hover: false,
+                other: { location: 'Andover, MA', link: '' }
             }),
             _react2.default.createElement(_Card2.default, {
                 cardWhite: false,
@@ -65042,7 +65123,9 @@ var ExpCont = function ExpCont() {
                 photoLink: "https://i.imgur.com/Bhsk273.png",
                 color: "blue",
                 subtitle: "Mobile Developer Internship",
-                hover: false
+                otherInfo: { tech: ['Swift', 'Objective C'] },
+                hover: false,
+                other: { location: 'Boston, MA', link: '' }
             })
         )
     );

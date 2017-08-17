@@ -27,6 +27,9 @@ body {
   padding: 0 15vw 0 15vw;
   align-items: center;
   overflow-x: auto;
+  @media screen and (max-width: $other-tablet) {
+      flex-direction: column;
+    }
 }
 
 .proj-title {
@@ -40,6 +43,17 @@ body {
   flex-direction: column;
   background: $bodyMain;
   
+}
+
+.card-other {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+.tech-name {
+  margin: 3px;
+  text-align: center;
 }
 
 .subheader {
@@ -93,7 +107,8 @@ body {
   min-height: 350px;
   min-width: 300px;
   flex-direction: column;
-  padding: 25px 10px 60px 10px;
+  justify-content: space-between;
+  padding: 25px 10px 25px 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
@@ -273,6 +288,9 @@ body {
 .exp-cards {
   display: flex;
   justify-content: center;
+  @media screen and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
 }
 
 .header-title {
@@ -280,9 +298,16 @@ body {
   font-size: 24px;
 }
 
+.ui.icon.header .icon {
+  font-size: 16px;
+  margin-right: 5px;
+  color: black;
+}
 
-
-
+.inline-link {
+  display: flex;
+  align-items: baseline;
+}
 
 
 

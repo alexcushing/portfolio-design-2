@@ -14,6 +14,8 @@ const ProjCont = () =>
         color="teal"
         hover={true}
         cardWhite={true}
+        otherInfo={{tech : ['MongoDB', 'Express.js', 'JQuery', 'Node.js', 'JavaScript', 'SCSS']}}
+        other={{link: 'http://prsmphoto.com', location:''}}
       />
       <Card
         name="roomio"
@@ -22,6 +24,8 @@ const ProjCont = () =>
         color="red"
         hover={true}
         cardWhite={true}
+        otherInfo={{tech : ['React.js', 'Laravel', 'SCSS', 'Socket.io', 'MySQL']}}
+        other={{link: 'https://github.com/alexcushing/roomio', location:''}}
       />
       <Card
         name="other"
@@ -30,6 +34,7 @@ const ProjCont = () =>
         color="orange"
         hover={true}
         cardWhite={true}
+        other={{link: '', location:''}}
       />
     </div>
   </div>;

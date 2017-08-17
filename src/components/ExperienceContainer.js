@@ -15,7 +15,9 @@ const ExpCont = () => (
             photoLink="https://i.imgur.com/Bhsk273.png"
             color="blue"
             subtitle="Software Engineering Co-op"
-            hover={false}        
+            otherInfo={{tech : ['JavaScript', 'Python/Django', 'JQuery' , 'SCSS', 'SQL', 'HTML']}}
+            hover={false}
+            other={{location: 'Andover, MA', link:''}}
             />
             <Card
             cardWhite={false}
@@ -24,7 +26,9 @@ const ExpCont = () => (
             photoLink="https://i.imgur.com/Bhsk273.png"
             color="blue"
             subtitle="Mobile Developer Internship"
+            otherInfo={{tech : ['Swift', 'Objective C']}}
             hover={false}
+            other={{location: 'Boston, MA', link:''}}
             />
         </div>
     </div>
