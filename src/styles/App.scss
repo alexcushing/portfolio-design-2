@@ -375,10 +375,10 @@ body {
 .bubble {
   position: absolute;
   bottom: 25px;
-  right: 50%;
+  right: calc(50% - 20px);
   z-index: 998;
 
-  animation: fadeIn .5s;
+  animation: fadeInUp .7s;
 
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00192d+0,000f75+100 */
   background: #00192d; /* Old browsers */
@@ -400,7 +400,7 @@ body {
 .bubbleBig {
   position: absolute;
   bottom: calc(100% - 650px);
-  right: calc(50% - 400px);
+  right: calc(50% - 390px);
   background-color: rgb(0%, 1.8%, 21.8%);
   color: white;
   width: 600px;
