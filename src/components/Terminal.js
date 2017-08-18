@@ -61,7 +61,7 @@ class Terminal extends Component {
                         : "term-container"
                 }
               >
-                <div className="status-bar">
+                {this.state.closing ? null : <div className="status-bar">
                   <span className="x-out bar-button" onClick={this.wiggle}>x</span>
                   <span className="expand bar-button" onClick={this.tada}>
                     +
@@ -69,17 +69,17 @@ class Terminal extends Component {
                   <span className="minus-down bar-button" onClick={this.hide}>
                     -
                   </span>
-                </div>
+                </div>}
                 <Typist stdTypingDelay={.5}>
                   <div name="term" id="term-textarea" className="term-textarea">
-                    <span className="run">./Alex_Cushing</span>
+                    <span className={this.state.closing ? "closing-hide-text" : "run"}>./Alex_Cushing</span>
                     <br />
-                    <span className="term-text">
+                    <span className={this.state.closing ? "closing-hide-text" : "term-text"}>
                       Welcome to my new portfolio!<br />
                       I am a front end engineer from the Boston area. 
                     </span>
                     <br />
-                    <span className="term-text">
+                    <span className={this.state.closing ? "closing-hide-text" : "term-text"}>
                       check out my{" "}
                       <a href="https://github.com/alexcushing" target="_blank" rel="noopener noreferrer">
                         <u>Github</u>
