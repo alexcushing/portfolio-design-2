@@ -3,9 +3,13 @@ $bodyMain: #f7f7f9;
 $grey: #f7f7f9;
 $white: white;
 $black: black;
+$darkred: darkred;
 $breakpoint-tablet: 790px;
 $other-tablet: 890px;
-$other-phone: 538px;
+$other-phone: 588px;
+
+@import "animations";
+
 
 body {
   margin:0;
@@ -26,8 +30,9 @@ body {
   justify-content: center;
   background: $bodyMain;
   padding: 0 15vw 0 15vw;
-  align-items: center;
+  align-items: flex-start;
   overflow-x: auto;
+  overflow-y: hidden;
   @media screen and (max-width: $other-tablet) {
       flex-direction: column;
     }
@@ -64,6 +69,7 @@ body {
 }
 
 .title {
+  animation: fadeInDown .5s;  
   z-index: 10;
   position: fixed;
   display: flex;
@@ -155,6 +161,7 @@ body {
 }
 
 .skill-item {
+  animation: fadeInUp .4s;  
   display: flex;
   justify-content: space-between;
   font-size: 24px;
@@ -285,7 +292,9 @@ body {
 }
 
 
-
+.modal-title {
+  text-align: center;
+}
 
 .experience-container-outer {
   margin: 0 auto;
@@ -324,7 +333,14 @@ body {
 }
 
 
-
+.x-out-btn {
+  color: $darkred;
+  background: none;
+  border: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
 
 
 
@@ -416,6 +432,7 @@ body {
 }
 
 .term-container {
+  //animation: zoomIn .25s;
   color: white;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   width: 600px;
@@ -427,10 +444,8 @@ body {
   border-radius: 10px;
   border: 0px;
   background: rgb(0%, 1.8%, 21.8%);
-  @media screen and (max-width: $other-phone) {
-     width: 70%;
-     height: 50%;
-    }
+  margin: 40px;
+
 }
 
 .term-container-full {
@@ -531,4 +546,12 @@ body {
   color: white;
   border: none;
   width: 100%;
+}
+
+.wiggle {
+  animation: wobble .7s;
+}
+
+.tada {
+  animation: tada .7s;
 }

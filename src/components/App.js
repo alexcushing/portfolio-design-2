@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import ProjCont from "./ProjectContainer";
 import AbtCont from "./AboutContainer";
 import SkillsCont from "./SkillsContainer";
 import ExpCont from "./ExperienceContainer";
-import TitleHeader from "./TitleHeader";
 
 const App = () =>
   <div className="App">

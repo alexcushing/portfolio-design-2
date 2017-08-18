@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Typist from "react-typist";
-import { Image } from "semantic-ui-react";
 
 class Terminal extends Component {
   state = {
@@ -8,8 +7,28 @@ class Terminal extends Component {
     closing: false,
     opening: false,
     full: false,
-    hidden: false
+    hidden: false,
+    wiggle: false,
+    tada: false
   };
+
+  wiggle = (e) => {
+    e.preventDefault();
+    this.setState({wiggle: true})
+    setTimeout(()=> {
+      this.setState({wiggle: false})
+    }, 700);
+
+  }
+
+  tada = (e) => {
+    e.preventDefault();
+    this.setState({tada: true})
+    setTimeout(()=> {
+      this.setState({tada: false})
+    }, 700);
+
+  }
 
   hide = () => {
     if (this.state.hidden) {
@@ -30,7 +49,7 @@ class Terminal extends Component {
       <div>
         {this.state.closed || this.state.hidden
           ? null
-          : <div className="Term-App">
+          : <div className={this.state.wiggle ? "Term-App wiggle" : this.state.tada ? "Term-App tada" : "Term-App"}>
               <div
                 className={
                   this.state.full && this.state.closing
@@ -43,8 +62,8 @@ class Terminal extends Component {
                 }
               >
                 <div className="status-bar">
-                  <span className="x-out bar-button">x</span>
-                  <span className="expand bar-button">
+                  <span className="x-out bar-button" onClick={this.wiggle}>x</span>
+                  <span className="expand bar-button" onClick={this.tada}>
                     +
                   </span>
                   <span className="minus-down bar-button">
@@ -62,13 +81,14 @@ class Terminal extends Component {
                     <br />
                     <span className="term-text">
                       checkout my{" "}
-                      <a href="https://github.com/alexcushing" target="_blank">
+                      <a href="https://github.com/alexcushing" target="_blank" rel="noopener noreferrer">
                         <u>Github</u>
                       </a>
                        {" "}and{" "}
                       <a
                         href="https://www.linkedin.com/in/alexandercushing/"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <u>LinkedIn</u>
                       </a>

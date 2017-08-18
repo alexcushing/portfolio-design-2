@@ -4,7 +4,7 @@ import Card from "./Card";
 const ProjCont = () =>
   <div className="card-outer-container">
     <div className="header-title proj-title">
-      <div className='bold'>Projects</div>
+      <div className="bold">Projects</div>
     </div>
     <div className="card-outer">
       <Card
@@ -14,8 +14,17 @@ const ProjCont = () =>
         color="teal"
         hover={true}
         cardWhite={true}
-        otherInfo={{tech : ['MongoDB', 'Express.js', 'JQuery', 'Node.js', 'JavaScript', 'SCSS']}}
-        other={{link: 'http://prsmphoto.com', location:''}}
+        otherInfo={{
+          tech: [
+            "MongoDB",
+            "Express.js",
+            "JQuery",
+            "Node.js",
+            "JavaScript",
+            "SCSS"
+          ]
+        }}
+        other={{ link: "http://prsmphoto.com", location: "" }}
       />
       <Card
         name="roomio"
@@ -24,8 +33,10 @@ const ProjCont = () =>
         color="red"
         hover={true}
         cardWhite={true}
-        otherInfo={{tech : ['React.js', 'Laravel', 'SCSS', 'Socket.io', 'MySQL']}}
-        other={{link: 'https://github.com/alexcushing/roomio', location:''}}
+        otherInfo={{
+          tech: ["React.js", "Laravel", "SCSS", "Socket.io", "MySQL"]
+        }}
+        other={{ link: "https://github.com/alexcushing/roomio", location: "" }}
       />
       <Card
         name="Admin Portal"
@@ -33,9 +44,9 @@ const ProjCont = () =>
         photoLink="https://image.flaticon.com/icons/svg/204/204296.svg"
         color="orange"
         hover={true}
-        otherInfo={{tech : ['JavaScript', 'JQuery' ,'Django', 'CSS']}}
+        otherInfo={{ tech: ["JavaScript", "JQuery", "Django", "CSS"] }}
         cardWhite={true}
-        other={{link: '', location:''}}
+        other={{ link: "", location: "" }}
       />
     </div>
   </div>;

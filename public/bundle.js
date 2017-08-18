@@ -15819,126 +15819,67 @@ var Card = function Card(_ref) {
       other = _ref.other;
   return _react2.default.createElement(
     "div",
-    null,
-    cardWhite ? _react2.default.createElement(
-      "div",
-      {
-        className: hover ? "header-card hover-card card-white" : "header-card card-white"
-      },
-      subtitle ? _react2.default.createElement(
-        _semanticUiReact.Label,
-        { as: "span", color: color, ribbon: true },
-        subtitle
-      ) : null,
+    {
+      className: hover ? cardWhite ? "header-card hover-card card-white" : "header-card hover-card card-offwhite" : cardWhite ? "header-card card-white" : "header-card card-offwhite"
+    },
+    subtitle ? _react2.default.createElement(
+      _semanticUiReact.Label,
+      { as: "span", color: color, ribbon: true },
+      subtitle
+    ) : null,
+    _react2.default.createElement(
+      _semanticUiReact.Header,
+      { as: "h2", icon: true, textAlign: "center" },
+      photoLink === "" ? _react2.default.createElement(
+        "span",
+        null,
+        _react2.default.createElement(_semanticUiReact.Icon, { name: "users", circular: true })
+      ) : photoLink ? _react2.default.createElement(_semanticUiReact.Image, { src: photoLink, alt: "photolink" }) : null,
       _react2.default.createElement(
-        _semanticUiReact.Header,
-        { as: "h2", icon: true, textAlign: "center" },
-        photoLink == "" ? _react2.default.createElement(_semanticUiReact.Icon, { name: "users", circular: true }) : _react2.default.createElement("img", { src: photoLink }),
+        _semanticUiReact.Header.Content,
+        null,
         _react2.default.createElement(
-          _semanticUiReact.Header.Content,
-          null,
-          _react2.default.createElement(
+          "div",
+          { className: "inline-link" },
+          other.link.length !== 0 ? _react2.default.createElement(
+            "a",
+            { href: other.link, target: "_blank" },
+            _react2.default.createElement(_semanticUiReact.Icon, { name: "linkify" })
+          ) : null,
+          other.location.length !== 0 ? _react2.default.createElement(
             "div",
-            { className: "inline-link" },
-            other.link.length != 0 ? _react2.default.createElement(
-              "a",
-              { href: other.link, target: "_blank" },
-              _react2.default.createElement(_semanticUiReact.Icon, { name: "linkify" })
-            ) : null,
-            other.location.length != 0 ? _react2.default.createElement(
-              "div",
+            null,
+            name,
+            _react2.default.createElement("br", null),
+            _react2.default.createElement(
+              "h3",
               null,
-              name,
-              _react2.default.createElement("br", null),
-              _react2.default.createElement(
-                "h3",
-                null,
-                other.location
-              )
-            ) : _react2.default.createElement(
-              "div",
-              null,
-              name
+              other.location
             )
+          ) : _react2.default.createElement(
+            "div",
+            null,
+            name
           )
         )
-      ),
-      _react2.default.createElement(
-        "div",
-        { className: "subheader" },
-        desc
-      ),
-      otherInfo ? _react2.default.createElement(
-        "div",
-        { className: "card-other" },
-        otherInfo.tech.length != 0 ? otherInfo.tech.map(function (name, key) {
-          return _react2.default.createElement(
-            "div",
-            { className: "tech-name", key: key },
-            name
-          );
-        }) : null
-      ) : null
-    ) : _react2.default.createElement(
+      )
+    ),
+    _react2.default.createElement(
       "div",
-      {
-        className: hover ? "header-card hover-card card-offwhite" : "header-card card-offwhite"
-      },
-      subtitle ? _react2.default.createElement(
-        _semanticUiReact.Label,
-        { as: "span", color: color, ribbon: true },
-        subtitle
-      ) : null,
-      _react2.default.createElement(
-        _semanticUiReact.Header,
-        { as: "h2", icon: true, textAlign: "center" },
-        photoLink == "" ? _react2.default.createElement(_semanticUiReact.Icon, { name: "users", circular: true }) : _react2.default.createElement("img", { src: photoLink }),
-        _react2.default.createElement(
-          _semanticUiReact.Header.Content,
-          null,
-          _react2.default.createElement(
-            "div",
-            { className: "inline-link" },
-            other.link.length != 0 ? _react2.default.createElement(
-              "a",
-              { href: other.link, target: "_blank" },
-              _react2.default.createElement(_semanticUiReact.Icon, { name: "linkify" })
-            ) : null,
-            other.location.length != 0 ? _react2.default.createElement(
-              "div",
-              null,
-              name,
-              _react2.default.createElement("br", null),
-              _react2.default.createElement(
-                "h3",
-                null,
-                other.location
-              )
-            ) : _react2.default.createElement(
-              "div",
-              null,
-              name
-            )
-          )
-        )
-      ),
-      _react2.default.createElement(
-        "div",
-        { className: "subheader" },
-        desc
-      ),
-      otherInfo ? _react2.default.createElement(
-        "div",
-        { className: "card-other" },
-        otherInfo.tech.length != 0 ? otherInfo.tech.map(function (name, key) {
-          return _react2.default.createElement(
-            "div",
-            { className: "tech-name", key: key },
-            name
-          );
-        }) : null
-      ) : null
-    )
+      { className: "subheader" },
+      desc
+    ),
+    otherInfo ? _react2.default.createElement(
+      "div",
+      { className: "card-other" },
+      otherInfo.tech.length !== 0 ? otherInfo.tech.map(function (name, key) {
+        return _react2.default.createElement(
+          "div",
+          { className: "tech-name", key: key },
+          name
+        );
+      }) : null
+    ) : null
   );
 };
 
@@ -32160,7 +32101,7 @@ exports = module.exports = __webpack_require__(473)(undefined);
 
 
 // module
-exports.push([module.i, "/*#00897b;*/\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n.card-offwhite {\n  background: #f7f7f9; }\n\n.card-white {\n  background: white; }\n\n.card-outer {\n  display: flex;\n  justify-content: center;\n  background: #f7f7f9;\n  padding: 0 15vw 0 15vw;\n  align-items: center;\n  overflow-x: auto; }\n  @media screen and (max-width: 890px) {\n    .card-outer {\n      flex-direction: column; } }\n\n.proj-title {\n  padding-left: 15vw; }\n\n.card-outer-container {\n  display: flex;\n  min-height: 100vh;\n  justify-content: center;\n  flex-direction: column;\n  background: #f7f7f9; }\n\n.card-other {\n  display: flex;\n  text-align: center;\n  flex-wrap: wrap;\n  width: 100%; }\n\n.tech-name {\n  margin: 3px;\n  text-align: center; }\n\n.subheader {\n  text-align: distribute;\n  padding: 3px; }\n\n.title {\n  z-index: 10;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  background: clear;\n  width: 100%;\n  font-size: 18px;\n  color: black; }\n  @media screen and (max-width: 790px) {\n    .title {\n      position: inherit;\n      background: #f7f7f9; } }\n\n.left {\n  align-self: center; }\n\n.right {\n  flex: 1; }\n\n.menu-list {\n  display: flex;\n  justify-content: flex-end;\n  list-style: none;\n  margin: 0; }\n\n.menu-list-item {\n  padding: 0 5px 0 5px;\n  cursor: pointer;\n  text-decoration: none;\n  color: black; }\n\n.header-card {\n  transition: .2s ease;\n  cursor: default;\n  margin: 15px 15px 50px 15px;\n  display: flex;\n  min-height: 350px;\n  min-width: 300px;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 25px 10px 25px 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }\n\n.hover-card:hover {\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  transform: scale(1.01); }\n\n.title-header {\n  padding: 10px;\n  padding-top: 60px;\n  font-size: 34px;\n  padding-left: 12%; }\n\n.colored {\n  color: black;\n  background: #f7f7f9; }\n\n.bold {\n  font-weight: bold; }\n\n.selected {\n  text-decoration: underline; }\n\n.back-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 0%); }\n\n.front-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%); }\n\n.skill-item {\n  display: flex;\n  justify-content: space-between;\n  font-size: 24px;\n  flex-wrap: wrap;\n  overflow-x: auto; }\n\n.skill-rating {\n  margin: 15px;\n  white-space: nowrap;\n  display: inline-block;\n  overflow: auto; }\n\n.skill-name {\n  margin: 15px; }\n\n.skills-outer {\n  margin: 0 auto;\n  min-height: calc(100vh - 30px);\n  width: 70vw;\n  white-space: nowrap;\n  overflow-x: auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 40px; }\n  @media screen and (max-width: 890px) {\n    .skills-outer {\n      width: 70%; } }\n\n.skills-list {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 70%; }\n\n.skills-title {\n  width: 100%; }\n\n.about-outer-cont {\n  background: #f7f7f9;\n  min-height: calc(100vh - 30px);\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n.about-outer {\n  background: #f7f7f9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: black;\n  font-size: 24px;\n  padding: 5px 5px 50px 5px; }\n\n.about-info {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start; }\n\n.about-info-item {\n  padding: 10px; }\n\n.about-blurb {\n  margin: 0 auto;\n  width: 30%;\n  padding-bottom: 50px;\n  background: #f7f7f9;\n  color: black;\n  min-width: 200px; }\n  @media screen and (max-width: 890px) {\n    .about-blurb {\n      width: 50%; } }\n  @media screen and (max-width: 790px) {\n    .about-blurb {\n      width: 80%; } }\n\n.hard-center {\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 10px;\n  height: 10px; }\n\n.ribbon {\n  width: 30%;\n  font-size: 16px; }\n\n.ui.form .fields > .field {\n  width: 100%; }\n\n.ReactModal__Overlay .ReactModal__Overlay--after-open {\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  background-color: rgba(255, 255, 255, 0.44902); }\n\n.ReactModalPortal div {\n  z-index: 999; }\n\n@media screen and (max-width: 890px) {\n  .ReactModal__Content .ReactModal__Content--after-open {\n    top: 7%;\n    left: 7%;\n    right: 7%;\n    bottom: 7%; } }\n\n.experience-container-outer {\n  margin: 0 auto;\n  min-height: 100vh;\n  width: 70vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.exp-cards {\n  display: flex;\n  justify-content: center; }\n  @media screen and (max-width: 790px) {\n    .exp-cards {\n      flex-direction: column;\n      align-content: center;\n      align-items: center;\n      align-self: center; } }\n\n.header-title {\n  margin: 20px;\n  font-size: 24px; }\n\n.ui.icon.header .icon {\n  font-size: 16px;\n  margin-right: 5px;\n  color: black; }\n\n.inline-link {\n  display: flex;\n  align-items: baseline; }\n\n/*terminal*/\n.Term-App {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  align-content: center; }\n\n@keyframes blink {\n  0% {\n    opacity: 1; }\n  49% {\n    opacity: 1; }\n  50% {\n    opacity: 0; }\n  100% {\n    opacity: 0; } }\n\n.bubble {\n  position: absolute;\n  bottom: 25px;\n  right: 50%;\n  z-index: 998;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00192d+0,000f75+100 */\n  background: #00192d;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to bottom, #00192d 0%, #000f75 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00192d', endColorstr='#000f75',GradientType=0 );\n  /* IE6-9 */\n  color: white;\n  width: 40px;\n  height: 30px;\n  transition: .3s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.bubbleBig {\n  position: absolute;\n  bottom: calc(100% - 650px);\n  right: calc(50% - 400px);\n  background-color: #000538;\n  color: white;\n  width: 800px;\n  height: 500px;\n  transition: .15s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.term-text {\n  font-size: .85em; }\n  @media screen and (max-width: 890px) {\n    .term-text {\n      font-size: 14px; } }\n\n.term-text a:visited, .term-text a {\n  color: white; }\n\n.bubble:hover {\n  bottom: 35px;\n  transform: scale(1.3);\n  transition: .3s ease; }\n\n.run {\n  color: #ff6b6b;\n  margin-bottom: 5px; }\n\n.term-container {\n  color: white;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 600px;\n  height: 400px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  transition: .15s ease;\n  border-radius: 10px;\n  border: 0px;\n  background: #000538; }\n  @media screen and (max-width: 538px) {\n    .term-container {\n      width: 70%;\n      height: 50%; } }\n\n.term-container-full {\n  align-self: center;\n  transition: .15s ease;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 100vw;\n  height: 100vh;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  border-radius: 10px;\n  background: #000538; }\n\n.term-container-small {\n  transition: .15s ease;\n  align-self: flex-end;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  overflow: hidden;\n  margin-top: 40px;\n  width: 40px;\n  height: 30px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  border-radius: 10px;\n  background: #000538;\n  margin-bottom: 25px; }\n\n.status-bar {\n  cursor: move;\n  height: 25px;\n  border-radius: 9px 9px 0 0;\n  background: gainsboro;\n  border: 3px solid #c7c7c7;\n  color: rgba(255, 255, 255, 0);\n  border: none;\n  display: flex;\n  padding: 3px; }\n\n.bar-button {\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n  text-align: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer; }\n\n.status-bar:hover {\n  color: black; }\n\n.x-out {\n  background: indianred; }\n\n.minus-down {\n  background: gold; }\n\n.expand {\n  background-color: green; }\n\n.Cursor {\n  display: none; }\n\n.term-textarea::after {\n  content: \"_\";\n  color: grey;\n  font-weight: bold;\n  animation: blink .8s infinite; }\n\n.term-textarea::before {\n  content: \"> \";\n  color: grey; }\n\n.term-textarea {\n  flex: 1;\n  font-family: Consolas, monaco, monospace;\n  padding: 20px;\n  line-height: 1.5em;\n  font-size: 1.5em;\n  height: 100%;\n  border: none;\n  background: #000538;\n  border-radius: 10px;\n  color: white;\n  border: none;\n  width: 100%; }\n", ""]);
+exports.push([module.i, "/*#00897b;*/\n/*!\n * animate.css -http://daneden.me/animate\n * Version - 3.5.2\n * Licensed under the MIT license - http://opensource.org/licenses/MIT\n *\n * Copyright (c) 2017 Daniel Eden\n */\n.animated {\n  animation-duration: 1s;\n  animation-fill-mode: both; }\n\n.animated.infinite {\n  animation-iteration-count: infinite; }\n\n.animated.hinge {\n  animation-duration: 2s; }\n\n.animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY {\n  animation-duration: .75s; }\n\n@keyframes bounce {\n  0%, 20%, 53%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n    transform: translateZ(0); }\n  40%, 43% {\n    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n    transform: translate3d(0, -30px, 0); }\n  70% {\n    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);\n    transform: translate3d(0, -15px, 0); }\n  90% {\n    transform: translate3d(0, -4px, 0); } }\n\n.bounce {\n  animation-name: bounce;\n  transform-origin: center bottom; }\n\n@keyframes flash {\n  0%, 50%, to {\n    opacity: 1; }\n  25%, 75% {\n    opacity: 0; } }\n\n.flash {\n  animation-name: flash; }\n\n@keyframes pulse {\n  0% {\n    transform: scaleX(1); }\n  50% {\n    transform: scale3d(1.05, 1.05, 1.05); }\n  to {\n    transform: scaleX(1); } }\n\n.pulse {\n  animation-name: pulse; }\n\n@keyframes rubberBand {\n  0% {\n    transform: scaleX(1); }\n  30% {\n    transform: scale3d(1.25, 0.75, 1); }\n  40% {\n    transform: scale3d(0.75, 1.25, 1); }\n  50% {\n    transform: scale3d(1.15, 0.85, 1); }\n  65% {\n    transform: scale3d(0.95, 1.05, 1); }\n  75% {\n    transform: scale3d(1.05, 0.95, 1); }\n  to {\n    transform: scaleX(1); } }\n\n.rubberBand {\n  animation-name: rubberBand; }\n\n@keyframes shake {\n  0%, to {\n    transform: translateZ(0); }\n  10%, 30%, 50%, 70%, 90% {\n    transform: translate3d(-10px, 0, 0); }\n  20%, 40%, 60%, 80% {\n    transform: translate3d(10px, 0, 0); } }\n\n.shake {\n  animation-name: shake; }\n\n@keyframes headShake {\n  0% {\n    transform: translateX(0); }\n  6.5% {\n    transform: translateX(-6px) rotateY(-9deg); }\n  18.5% {\n    transform: translateX(5px) rotateY(7deg); }\n  31.5% {\n    transform: translateX(-3px) rotateY(-5deg); }\n  43.5% {\n    transform: translateX(2px) rotateY(3deg); }\n  50% {\n    transform: translateX(0); } }\n\n.headShake {\n  animation-timing-function: ease-in-out;\n  animation-name: headShake; }\n\n@keyframes swing {\n  20% {\n    transform: rotate(15deg); }\n  40% {\n    transform: rotate(-10deg); }\n  60% {\n    transform: rotate(5deg); }\n  80% {\n    transform: rotate(-5deg); }\n  to {\n    transform: rotate(0deg); } }\n\n.swing {\n  transform-origin: top center;\n  animation-name: swing; }\n\n@keyframes tada {\n  0% {\n    transform: scaleX(1); }\n  10%, 20% {\n    transform: scale3d(0.9, 0.9, 0.9) rotate(-3deg); }\n  30%, 50%, 70%, 90% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg); }\n  40%, 60%, 80% {\n    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg); }\n  to {\n    transform: scaleX(1); } }\n\n.tada {\n  animation-name: tada; }\n\n@keyframes wobble {\n  0% {\n    transform: none; }\n  15% {\n    transform: translate3d(-25%, 0, 0) rotate(-5deg); }\n  30% {\n    transform: translate3d(20%, 0, 0) rotate(3deg); }\n  45% {\n    transform: translate3d(-15%, 0, 0) rotate(-3deg); }\n  60% {\n    transform: translate3d(10%, 0, 0) rotate(2deg); }\n  75% {\n    transform: translate3d(-5%, 0, 0) rotate(-1deg); }\n  to {\n    transform: none; } }\n\n.wobble {\n  animation-name: wobble; }\n\n@keyframes jello {\n  0%, 11.1%, to {\n    transform: none; }\n  22.2% {\n    transform: skewX(-12.5deg) skewY(-12.5deg); }\n  33.3% {\n    transform: skewX(6.25deg) skewY(6.25deg); }\n  44.4% {\n    transform: skewX(-3.125deg) skewY(-3.125deg); }\n  55.5% {\n    transform: skewX(1.5625deg) skewY(1.5625deg); }\n  66.6% {\n    transform: skewX(-0.78125deg) skewY(-0.78125deg); }\n  77.7% {\n    transform: skewX(0.39062deg) skewY(0.39062deg); }\n  88.8% {\n    transform: skewX(-0.19531deg) skewY(-0.19531deg); } }\n\n.jello {\n  animation-name: jello;\n  transform-origin: center; }\n\n@keyframes bounceIn {\n  0%, 20%, 40%, 60%, 80%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }\n  0% {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3); }\n  20% {\n    transform: scale3d(1.1, 1.1, 1.1); }\n  40% {\n    transform: scale3d(0.9, 0.9, 0.9); }\n  60% {\n    opacity: 1;\n    transform: scale3d(1.03, 1.03, 1.03); }\n  80% {\n    transform: scale3d(0.97, 0.97, 0.97); }\n  to {\n    opacity: 1;\n    transform: scaleX(1); } }\n\n.bounceIn {\n  animation-name: bounceIn; }\n\n@keyframes bounceInDown {\n  0%, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -3000px, 0); }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, 25px, 0); }\n  75% {\n    transform: translate3d(0, -10px, 0); }\n  90% {\n    transform: translate3d(0, 5px, 0); }\n  to {\n    transform: none; } }\n\n.bounceInDown {\n  animation-name: bounceInDown; }\n\n@keyframes bounceInLeft {\n  0%, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }\n  0% {\n    opacity: 0;\n    transform: translate3d(-3000px, 0, 0); }\n  60% {\n    opacity: 1;\n    transform: translate3d(25px, 0, 0); }\n  75% {\n    transform: translate3d(-10px, 0, 0); }\n  90% {\n    transform: translate3d(5px, 0, 0); }\n  to {\n    transform: none; } }\n\n.bounceInLeft {\n  animation-name: bounceInLeft; }\n\n@keyframes bounceInRight {\n  0%, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }\n  0% {\n    opacity: 0;\n    transform: translate3d(3000px, 0, 0); }\n  60% {\n    opacity: 1;\n    transform: translate3d(-25px, 0, 0); }\n  75% {\n    transform: translate3d(10px, 0, 0); }\n  90% {\n    transform: translate3d(-5px, 0, 0); }\n  to {\n    transform: none; } }\n\n.bounceInRight {\n  animation-name: bounceInRight; }\n\n@keyframes bounceInUp {\n  0%, 60%, 75%, 90%, to {\n    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }\n  0% {\n    opacity: 0;\n    transform: translate3d(0, 3000px, 0); }\n  60% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0); }\n  75% {\n    transform: translate3d(0, 10px, 0); }\n  90% {\n    transform: translate3d(0, -5px, 0); }\n  to {\n    transform: translateZ(0); } }\n\n.bounceInUp {\n  animation-name: bounceInUp; }\n\n@keyframes bounceOut {\n  20% {\n    transform: scale3d(0.9, 0.9, 0.9); }\n  50%, 55% {\n    opacity: 1;\n    transform: scale3d(1.1, 1.1, 1.1); }\n  to {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3); } }\n\n.bounceOut {\n  animation-name: bounceOut; }\n\n@keyframes bounceOutDown {\n  20% {\n    transform: translate3d(0, 10px, 0); }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, -20px, 0); }\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0); } }\n\n.bounceOutDown {\n  animation-name: bounceOutDown; }\n\n@keyframes bounceOutLeft {\n  20% {\n    opacity: 1;\n    transform: translate3d(20px, 0, 0); }\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0); } }\n\n.bounceOutLeft {\n  animation-name: bounceOutLeft; }\n\n@keyframes bounceOutRight {\n  20% {\n    opacity: 1;\n    transform: translate3d(-20px, 0, 0); }\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0); } }\n\n.bounceOutRight {\n  animation-name: bounceOutRight; }\n\n@keyframes bounceOutUp {\n  20% {\n    transform: translate3d(0, -10px, 0); }\n  40%, 45% {\n    opacity: 1;\n    transform: translate3d(0, 20px, 0); }\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0); } }\n\n.bounceOutUp {\n  animation-name: bounceOutUp; }\n\n@keyframes fadeIn {\n  0% {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.fadeIn {\n  animation-name: fadeIn; }\n\n@keyframes fadeInDown {\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInDown {\n  animation-name: fadeInDown; }\n\n@keyframes fadeInDownBig {\n  0% {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInDownBig {\n  animation-name: fadeInDownBig; }\n\n@keyframes fadeInLeft {\n  0% {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInLeft {\n  animation-name: fadeInLeft; }\n\n@keyframes fadeInLeftBig {\n  0% {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInLeftBig {\n  animation-name: fadeInLeftBig; }\n\n@keyframes fadeInRight {\n  0% {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInRight {\n  animation-name: fadeInRight; }\n\n@keyframes fadeInRightBig {\n  0% {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInRightBig {\n  animation-name: fadeInRightBig; }\n\n@keyframes fadeInUp {\n  0% {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInUp {\n  animation-name: fadeInUp; }\n\n@keyframes fadeInUpBig {\n  0% {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.fadeInUpBig {\n  animation-name: fadeInUpBig; }\n\n@keyframes fadeOut {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0; } }\n\n.fadeOut {\n  animation-name: fadeOut; }\n\n@keyframes fadeOutDown {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(0, 100%, 0); } }\n\n.fadeOutDown {\n  animation-name: fadeOutDown; }\n\n@keyframes fadeOutDownBig {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(0, 2000px, 0); } }\n\n.fadeOutDownBig {\n  animation-name: fadeOutDownBig; }\n\n@keyframes fadeOutLeft {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0); } }\n\n.fadeOutLeft {\n  animation-name: fadeOutLeft; }\n\n@keyframes fadeOutLeftBig {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(-2000px, 0, 0); } }\n\n.fadeOutLeftBig {\n  animation-name: fadeOutLeftBig; }\n\n@keyframes fadeOutRight {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0); } }\n\n.fadeOutRight {\n  animation-name: fadeOutRight; }\n\n@keyframes fadeOutRightBig {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(2000px, 0, 0); } }\n\n.fadeOutRightBig {\n  animation-name: fadeOutRightBig; }\n\n@keyframes fadeOutUp {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(0, -100%, 0); } }\n\n.fadeOutUp {\n  animation-name: fadeOutUp; }\n\n@keyframes fadeOutUpBig {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(0, -2000px, 0); } }\n\n.fadeOutUpBig {\n  animation-name: fadeOutUpBig; }\n\n@keyframes flip {\n  0% {\n    transform: perspective(400px) rotateY(-1turn);\n    animation-timing-function: ease-out; }\n  40% {\n    transform: perspective(400px) translateZ(150px) rotateY(-190deg);\n    animation-timing-function: ease-out; }\n  50% {\n    transform: perspective(400px) translateZ(150px) rotateY(-170deg);\n    animation-timing-function: ease-in; }\n  80% {\n    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);\n    animation-timing-function: ease-in; }\n  to {\n    transform: perspective(400px);\n    animation-timing-function: ease-in; } }\n\n.animated.flip {\n  -webkit-backface-visibility: visible;\n  backface-visibility: visible;\n  animation-name: flip; }\n\n@keyframes flipInX {\n  0% {\n    transform: perspective(400px) rotateX(90deg);\n    animation-timing-function: ease-in;\n    opacity: 0; }\n  40% {\n    transform: perspective(400px) rotateX(-20deg);\n    animation-timing-function: ease-in; }\n  60% {\n    transform: perspective(400px) rotateX(10deg);\n    opacity: 1; }\n  80% {\n    transform: perspective(400px) rotateX(-5deg); }\n  to {\n    transform: perspective(400px); } }\n\n.flipInX {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInX; }\n\n@keyframes flipInY {\n  0% {\n    transform: perspective(400px) rotateY(90deg);\n    animation-timing-function: ease-in;\n    opacity: 0; }\n  40% {\n    transform: perspective(400px) rotateY(-20deg);\n    animation-timing-function: ease-in; }\n  60% {\n    transform: perspective(400px) rotateY(10deg);\n    opacity: 1; }\n  80% {\n    transform: perspective(400px) rotateY(-5deg); }\n  to {\n    transform: perspective(400px); } }\n\n.flipInY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipInY; }\n\n@keyframes flipOutX {\n  0% {\n    transform: perspective(400px); }\n  30% {\n    transform: perspective(400px) rotateX(-20deg);\n    opacity: 1; }\n  to {\n    transform: perspective(400px) rotateX(90deg);\n    opacity: 0; } }\n\n.flipOutX {\n  animation-name: flipOutX;\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important; }\n\n@keyframes flipOutY {\n  0% {\n    transform: perspective(400px); }\n  30% {\n    transform: perspective(400px) rotateY(-15deg);\n    opacity: 1; }\n  to {\n    transform: perspective(400px) rotateY(90deg);\n    opacity: 0; } }\n\n.flipOutY {\n  -webkit-backface-visibility: visible !important;\n  backface-visibility: visible !important;\n  animation-name: flipOutY; }\n\n@keyframes lightSpeedIn {\n  0% {\n    transform: translate3d(100%, 0, 0) skewX(-30deg);\n    opacity: 0; }\n  60% {\n    transform: skewX(20deg);\n    opacity: 1; }\n  80% {\n    transform: skewX(-5deg);\n    opacity: 1; }\n  to {\n    transform: none;\n    opacity: 1; } }\n\n.lightSpeedIn {\n  animation-name: lightSpeedIn;\n  animation-timing-function: ease-out; }\n\n@keyframes lightSpeedOut {\n  0% {\n    opacity: 1; }\n  to {\n    transform: translate3d(100%, 0, 0) skewX(30deg);\n    opacity: 0; } }\n\n.lightSpeedOut {\n  animation-name: lightSpeedOut;\n  animation-timing-function: ease-in; }\n\n@keyframes rotateIn {\n  0% {\n    transform-origin: center;\n    transform: rotate(-200deg);\n    opacity: 0; }\n  to {\n    transform-origin: center;\n    transform: none;\n    opacity: 1; } }\n\n.rotateIn {\n  animation-name: rotateIn; }\n\n@keyframes rotateInDownLeft {\n  0% {\n    transform-origin: left bottom;\n    transform: rotate(-45deg);\n    opacity: 0; }\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1; } }\n\n.rotateInDownLeft {\n  animation-name: rotateInDownLeft; }\n\n@keyframes rotateInDownRight {\n  0% {\n    transform-origin: right bottom;\n    transform: rotate(45deg);\n    opacity: 0; }\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1; } }\n\n.rotateInDownRight {\n  animation-name: rotateInDownRight; }\n\n@keyframes rotateInUpLeft {\n  0% {\n    transform-origin: left bottom;\n    transform: rotate(45deg);\n    opacity: 0; }\n  to {\n    transform-origin: left bottom;\n    transform: none;\n    opacity: 1; } }\n\n.rotateInUpLeft {\n  animation-name: rotateInUpLeft; }\n\n@keyframes rotateInUpRight {\n  0% {\n    transform-origin: right bottom;\n    transform: rotate(-90deg);\n    opacity: 0; }\n  to {\n    transform-origin: right bottom;\n    transform: none;\n    opacity: 1; } }\n\n.rotateInUpRight {\n  animation-name: rotateInUpRight; }\n\n@keyframes rotateOut {\n  0% {\n    transform-origin: center;\n    opacity: 1; }\n  to {\n    transform-origin: center;\n    transform: rotate(200deg);\n    opacity: 0; } }\n\n.rotateOut {\n  animation-name: rotateOut; }\n\n@keyframes rotateOutDownLeft {\n  0% {\n    transform-origin: left bottom;\n    opacity: 1; }\n  to {\n    transform-origin: left bottom;\n    transform: rotate(45deg);\n    opacity: 0; } }\n\n.rotateOutDownLeft {\n  animation-name: rotateOutDownLeft; }\n\n@keyframes rotateOutDownRight {\n  0% {\n    transform-origin: right bottom;\n    opacity: 1; }\n  to {\n    transform-origin: right bottom;\n    transform: rotate(-45deg);\n    opacity: 0; } }\n\n.rotateOutDownRight {\n  animation-name: rotateOutDownRight; }\n\n@keyframes rotateOutUpLeft {\n  0% {\n    transform-origin: left bottom;\n    opacity: 1; }\n  to {\n    transform-origin: left bottom;\n    transform: rotate(-45deg);\n    opacity: 0; } }\n\n.rotateOutUpLeft {\n  animation-name: rotateOutUpLeft; }\n\n@keyframes rotateOutUpRight {\n  0% {\n    transform-origin: right bottom;\n    opacity: 1; }\n  to {\n    transform-origin: right bottom;\n    transform: rotate(90deg);\n    opacity: 0; } }\n\n.rotateOutUpRight {\n  animation-name: rotateOutUpRight; }\n\n@keyframes hinge {\n  0% {\n    transform-origin: top left;\n    animation-timing-function: ease-in-out; }\n  20%, 60% {\n    transform: rotate(80deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out; }\n  40%, 80% {\n    transform: rotate(60deg);\n    transform-origin: top left;\n    animation-timing-function: ease-in-out;\n    opacity: 1; }\n  to {\n    transform: translate3d(0, 700px, 0);\n    opacity: 0; } }\n\n.hinge {\n  animation-name: hinge; }\n\n@keyframes jackInTheBox {\n  0% {\n    opacity: 0;\n    transform: scale(0.1) rotate(30deg);\n    transform-origin: center bottom; }\n  50% {\n    transform: rotate(-10deg); }\n  70% {\n    transform: rotate(3deg); }\n  to {\n    opacity: 1;\n    transform: scale(1); } }\n\n.jackInTheBox {\n  animation-name: jackInTheBox; }\n\n@keyframes rollIn {\n  0% {\n    opacity: 0;\n    transform: translate3d(-100%, 0, 0) rotate(-120deg); }\n  to {\n    opacity: 1;\n    transform: none; } }\n\n.rollIn {\n  animation-name: rollIn; }\n\n@keyframes rollOut {\n  0% {\n    opacity: 1; }\n  to {\n    opacity: 0;\n    transform: translate3d(100%, 0, 0) rotate(120deg); } }\n\n.rollOut {\n  animation-name: rollOut; }\n\n@keyframes zoomIn {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3); }\n  50% {\n    opacity: 1; } }\n\n.zoomIn {\n  animation-name: zoomIn; }\n\n@keyframes zoomInDown {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  60% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomInDown {\n  animation-name: zoomInDown; }\n\n@keyframes zoomInLeft {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  60% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomInLeft {\n  animation-name: zoomInLeft; }\n\n@keyframes zoomInRight {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  60% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomInRight {\n  animation-name: zoomInRight; }\n\n@keyframes zoomInUp {\n  0% {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  60% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomInUp {\n  animation-name: zoomInUp; }\n\n@keyframes zoomOut {\n  0% {\n    opacity: 1; }\n  50% {\n    opacity: 0;\n    transform: scale3d(0.3, 0.3, 0.3); }\n  to {\n    opacity: 0; } }\n\n.zoomOut {\n  animation-name: zoomOut; }\n\n@keyframes zoomOutDown {\n  40% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  to {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomOutDown {\n  animation-name: zoomOutDown; }\n\n@keyframes zoomOutLeft {\n  40% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0); }\n  to {\n    opacity: 0;\n    transform: scale(0.1) translate3d(-2000px, 0, 0);\n    transform-origin: left center; } }\n\n.zoomOutLeft {\n  animation-name: zoomOutLeft; }\n\n@keyframes zoomOutRight {\n  40% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0); }\n  to {\n    opacity: 0;\n    transform: scale(0.1) translate3d(2000px, 0, 0);\n    transform-origin: right center; } }\n\n.zoomOutRight {\n  animation-name: zoomOutRight; }\n\n@keyframes zoomOutUp {\n  40% {\n    opacity: 1;\n    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);\n    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }\n  to {\n    opacity: 0;\n    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);\n    transform-origin: center bottom;\n    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1); } }\n\n.zoomOutUp {\n  animation-name: zoomOutUp; }\n\n@keyframes slideInDown {\n  0% {\n    transform: translate3d(0, -100%, 0);\n    visibility: visible; }\n  to {\n    transform: translateZ(0); } }\n\n.slideInDown {\n  animation-name: slideInDown; }\n\n@keyframes slideInLeft {\n  0% {\n    transform: translate3d(-100%, 0, 0);\n    visibility: visible; }\n  to {\n    transform: translateZ(0); } }\n\n.slideInLeft {\n  animation-name: slideInLeft; }\n\n@keyframes slideInRight {\n  0% {\n    transform: translate3d(100%, 0, 0);\n    visibility: visible; }\n  to {\n    transform: translateZ(0); } }\n\n.slideInRight {\n  animation-name: slideInRight; }\n\n@keyframes slideInUp {\n  0% {\n    transform: translate3d(0, 100%, 0);\n    visibility: visible; }\n  to {\n    transform: translateZ(0); } }\n\n.slideInUp {\n  animation-name: slideInUp; }\n\n@keyframes slideOutDown {\n  0% {\n    transform: translateZ(0); }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, 100%, 0); } }\n\n.slideOutDown {\n  animation-name: slideOutDown; }\n\n@keyframes slideOutLeft {\n  0% {\n    transform: translateZ(0); }\n  to {\n    visibility: hidden;\n    transform: translate3d(-100%, 0, 0); } }\n\n.slideOutLeft {\n  animation-name: slideOutLeft; }\n\n@keyframes slideOutRight {\n  0% {\n    transform: translateZ(0); }\n  to {\n    visibility: hidden;\n    transform: translate3d(100%, 0, 0); } }\n\n.slideOutRight {\n  animation-name: slideOutRight; }\n\n@keyframes slideOutUp {\n  0% {\n    transform: translateZ(0); }\n  to {\n    visibility: hidden;\n    transform: translate3d(0, -100%, 0); } }\n\n.slideOutUp {\n  animation-name: slideOutUp; }\n\nbody {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box; }\n\n.card-offwhite {\n  background: #f7f7f9; }\n\n.card-white {\n  background: white; }\n\n.card-outer {\n  display: flex;\n  justify-content: center;\n  background: #f7f7f9;\n  padding: 0 15vw 0 15vw;\n  align-items: flex-start;\n  overflow-x: auto;\n  overflow-y: hidden; }\n  @media screen and (max-width: 890px) {\n    .card-outer {\n      flex-direction: column; } }\n\n.proj-title {\n  padding-left: 15vw; }\n\n.card-outer-container {\n  display: flex;\n  min-height: 100vh;\n  justify-content: center;\n  flex-direction: column;\n  background: #f7f7f9; }\n\n.card-other {\n  display: flex;\n  text-align: center;\n  flex-wrap: wrap;\n  width: 100%; }\n\n.tech-name {\n  margin: 3px;\n  text-align: center; }\n\n.subheader {\n  text-align: distribute;\n  padding: 3px; }\n\n.title {\n  animation: fadeInDown .5s;\n  z-index: 10;\n  position: fixed;\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  background: clear;\n  width: 100%;\n  font-size: 18px;\n  color: black; }\n  @media screen and (max-width: 790px) {\n    .title {\n      position: inherit;\n      background: #f7f7f9; } }\n\n.left {\n  align-self: center; }\n\n.right {\n  flex: 1; }\n\n.menu-list {\n  display: flex;\n  justify-content: flex-end;\n  list-style: none;\n  margin: 0; }\n\n.menu-list-item {\n  padding: 0 5px 0 5px;\n  cursor: pointer;\n  text-decoration: none;\n  color: black; }\n\n.header-card {\n  transition: .2s ease;\n  cursor: default;\n  margin: 15px 15px 50px 15px;\n  display: flex;\n  min-height: 350px;\n  min-width: 300px;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 25px 10px 25px 10px;\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }\n\n.hover-card:hover {\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  transform: scale(1.01); }\n\n.title-header {\n  padding: 10px;\n  padding-top: 60px;\n  font-size: 34px;\n  padding-left: 12%; }\n\n.colored {\n  color: black;\n  background: #f7f7f9; }\n\n.bold {\n  font-weight: bold; }\n\n.selected {\n  text-decoration: underline; }\n\n.back-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 0%); }\n\n.front-transition {\n  width: 100%;\n  height: 30px;\n  background-repeat: no-repeat;\n  background: #f7f7f9;\n  clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%); }\n\n.skill-item {\n  animation: fadeInUp .4s;\n  display: flex;\n  justify-content: space-between;\n  font-size: 24px;\n  flex-wrap: wrap;\n  overflow-x: auto; }\n\n.skill-rating {\n  margin: 15px;\n  white-space: nowrap;\n  display: inline-block;\n  overflow: auto; }\n\n.skill-name {\n  margin: 15px; }\n\n.skills-outer {\n  margin: 0 auto;\n  min-height: calc(100vh - 30px);\n  width: 70vw;\n  white-space: nowrap;\n  overflow-x: auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding-bottom: 40px; }\n  @media screen and (max-width: 890px) {\n    .skills-outer {\n      width: 70%; } }\n\n.skills-list {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  width: 70%; }\n\n.skills-title {\n  width: 100%; }\n\n.about-outer-cont {\n  background: #f7f7f9;\n  min-height: calc(100vh - 30px);\n  display: flex;\n  justify-content: center;\n  flex-direction: column; }\n\n.about-outer {\n  background: #f7f7f9;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: black;\n  font-size: 24px;\n  padding: 5px 5px 50px 5px; }\n\n.about-info {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-start; }\n\n.about-info-item {\n  padding: 10px; }\n\n.about-blurb {\n  margin: 0 auto;\n  width: 30%;\n  padding-bottom: 50px;\n  background: #f7f7f9;\n  color: black;\n  min-width: 200px; }\n  @media screen and (max-width: 890px) {\n    .about-blurb {\n      width: 50%; } }\n  @media screen and (max-width: 790px) {\n    .about-blurb {\n      width: 80%; } }\n\n.hard-center {\n  position: relative;\n  left: 50%;\n  top: 50%;\n  width: 10px;\n  height: 10px; }\n\n.ribbon {\n  width: 30%;\n  font-size: 16px; }\n\n.ui.form .fields > .field {\n  width: 100%; }\n\n.ReactModal__Overlay .ReactModal__Overlay--after-open {\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  background-color: rgba(255, 255, 255, 0.44902); }\n\n.ReactModalPortal div {\n  z-index: 999; }\n\n@media screen and (max-width: 890px) {\n  .ReactModal__Content .ReactModal__Content--after-open {\n    top: 7%;\n    left: 7%;\n    right: 7%;\n    bottom: 7%; } }\n\n.modal-title {\n  text-align: center; }\n\n.experience-container-outer {\n  margin: 0 auto;\n  min-height: 100vh;\n  width: 70vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: center; }\n\n.exp-cards {\n  display: flex;\n  justify-content: center; }\n  @media screen and (max-width: 790px) {\n    .exp-cards {\n      flex-direction: column;\n      align-content: center;\n      align-items: center;\n      align-self: center; } }\n\n.header-title {\n  margin: 20px;\n  font-size: 24px; }\n\n.ui.icon.header .icon {\n  font-size: 16px;\n  margin-right: 5px;\n  color: black; }\n\n.inline-link {\n  display: flex;\n  align-items: baseline; }\n\n.x-out-btn {\n  color: darkred;\n  background: none;\n  border: none;\n  top: 0;\n  left: 0;\n  position: absolute; }\n\n/*terminal*/\n.Term-App {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  align-content: center; }\n\n@keyframes blink {\n  0% {\n    opacity: 1; }\n  49% {\n    opacity: 1; }\n  50% {\n    opacity: 0; }\n  100% {\n    opacity: 0; } }\n\n.bubble {\n  position: absolute;\n  bottom: 25px;\n  right: 50%;\n  z-index: 998;\n  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00192d+0,000f75+100 */\n  background: #00192d;\n  /* Old browsers */\n  background: -moz-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* FF3.6-15 */\n  background: -webkit-linear-gradient(top, #00192d 0%, #000f75 100%);\n  /* Chrome10-25,Safari5.1-6 */\n  background: linear-gradient(to bottom, #00192d 0%, #000f75 100%);\n  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */\n  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00192d', endColorstr='#000f75',GradientType=0 );\n  /* IE6-9 */\n  color: white;\n  width: 40px;\n  height: 30px;\n  transition: .3s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.bubbleBig {\n  position: absolute;\n  bottom: calc(100% - 650px);\n  right: calc(50% - 400px);\n  background-color: #000538;\n  color: white;\n  width: 800px;\n  height: 500px;\n  transition: .15s ease;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  cursor: pointer; }\n\n.term-text {\n  font-size: .85em; }\n  @media screen and (max-width: 890px) {\n    .term-text {\n      font-size: 14px; } }\n\n.term-text a:visited, .term-text a {\n  color: white; }\n\n.bubble:hover {\n  bottom: 35px;\n  transform: scale(1.3);\n  transition: .3s ease; }\n\n.run {\n  color: #ff6b6b;\n  margin-bottom: 5px; }\n\n.term-container {\n  color: white;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 600px;\n  height: 400px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  transition: .15s ease;\n  border-radius: 10px;\n  border: 0px;\n  background: #000538;\n  margin: 40px; }\n\n.term-container-full {\n  align-self: center;\n  transition: .15s ease;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  width: 100vw;\n  height: 100vh;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  border-radius: 10px;\n  background: #000538; }\n\n.term-container-small {\n  transition: .15s ease;\n  align-self: flex-end;\n  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);\n  overflow: hidden;\n  margin-top: 40px;\n  width: 40px;\n  height: 30px;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  border-radius: 10px;\n  background: #000538;\n  margin-bottom: 25px; }\n\n.status-bar {\n  cursor: move;\n  height: 25px;\n  border-radius: 9px 9px 0 0;\n  background: gainsboro;\n  border: 3px solid #c7c7c7;\n  color: rgba(255, 255, 255, 0);\n  border: none;\n  display: flex;\n  padding: 3px; }\n\n.bar-button {\n  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\n  text-align: center;\n  width: 18px;\n  height: 18px;\n  border-radius: 50%;\n  margin-left: 5px;\n  cursor: pointer; }\n\n.status-bar:hover {\n  color: black; }\n\n.x-out {\n  background: indianred; }\n\n.minus-down {\n  background: gold; }\n\n.expand {\n  background-color: green; }\n\n.Cursor {\n  display: none; }\n\n.term-textarea::after {\n  content: \"_\";\n  color: grey;\n  font-weight: bold;\n  animation: blink .8s infinite; }\n\n.term-textarea::before {\n  content: \"> \";\n  color: grey; }\n\n.term-textarea {\n  flex: 1;\n  font-family: Consolas, monaco, monospace;\n  padding: 20px;\n  line-height: 1.5em;\n  font-size: 1.5em;\n  height: 100%;\n  border: none;\n  background: #000538;\n  border-radius: 10px;\n  color: white;\n  border: none;\n  width: 100%; }\n\n.wiggle {\n  animation: wobble .7s; }\n\n.tada {\n  animation: tada .7s; }\n", ""]);
 
 // exports
 
@@ -32732,10 +32673,6 @@ var _ExperienceContainer = __webpack_require__(893);
 
 var _ExperienceContainer2 = _interopRequireDefault(_ExperienceContainer);
 
-var _TitleHeader = __webpack_require__(894);
-
-var _TitleHeader2 = _interopRequireDefault(_TitleHeader);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -32798,8 +32735,10 @@ var ProjCont = function ProjCont() {
         color: "teal",
         hover: true,
         cardWhite: true,
-        otherInfo: { tech: ['MongoDB', 'Express.js', 'JQuery', 'Node.js', 'JavaScript', 'SCSS'] },
-        other: { link: 'http://prsmphoto.com', location: '' }
+        otherInfo: {
+          tech: ["MongoDB", "Express.js", "JQuery", "Node.js", "JavaScript", "SCSS"]
+        },
+        other: { link: "http://prsmphoto.com", location: "" }
       }),
       _react2.default.createElement(_Card2.default, {
         name: "roomio",
@@ -32808,8 +32747,10 @@ var ProjCont = function ProjCont() {
         color: "red",
         hover: true,
         cardWhite: true,
-        otherInfo: { tech: ['React.js', 'Laravel', 'SCSS', 'Socket.io', 'MySQL'] },
-        other: { link: 'https://github.com/alexcushing/roomio', location: '' }
+        otherInfo: {
+          tech: ["React.js", "Laravel", "SCSS", "Socket.io", "MySQL"]
+        },
+        other: { link: "https://github.com/alexcushing/roomio", location: "" }
       }),
       _react2.default.createElement(_Card2.default, {
         name: "Admin Portal",
@@ -32817,9 +32758,9 @@ var ProjCont = function ProjCont() {
         photoLink: "https://image.flaticon.com/icons/svg/204/204296.svg",
         color: "orange",
         hover: true,
-        otherInfo: { tech: ['JavaScript', 'JQuery', 'Django', 'CSS'] },
+        otherInfo: { tech: ["JavaScript", "JQuery", "Django", "CSS"] },
         cardWhite: true,
-        other: { link: '', location: '' }
+        other: { link: "", location: "" }
       })
     )
   );
@@ -63044,8 +62985,6 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _semanticUiReact = __webpack_require__(71);
-
 var _Terminal = __webpack_require__(889);
 
 var _Terminal2 = _interopRequireDefault(_Terminal);
@@ -63083,8 +63022,6 @@ var _reactTypist = __webpack_require__(890);
 
 var _reactTypist2 = _interopRequireDefault(_reactTypist);
 
-var _semanticUiReact = __webpack_require__(71);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63112,7 +63049,21 @@ var Terminal = function (_Component) {
       closing: false,
       opening: false,
       full: false,
-      hidden: false
+      hidden: false,
+      wiggle: false,
+      tada: false
+    }, _this.wiggle = function (e) {
+      e.preventDefault();
+      _this.setState({ wiggle: true });
+      setTimeout(function () {
+        _this.setState({ wiggle: false });
+      }, 700);
+    }, _this.tada = function (e) {
+      e.preventDefault();
+      _this.setState({ tada: true });
+      setTimeout(function () {
+        _this.setState({ tada: false });
+      }, 700);
     }, _this.hide = function () {
       if (_this.state.hidden) {
         _this.setState({ opening: true });
@@ -63136,7 +63087,7 @@ var Terminal = function (_Component) {
         null,
         this.state.closed || this.state.hidden ? null : _react2.default.createElement(
           "div",
-          { className: "Term-App" },
+          { className: this.state.wiggle ? "Term-App wiggle" : this.state.tada ? "Term-App tada" : "Term-App" },
           _react2.default.createElement(
             "div",
             {
@@ -63147,12 +63098,12 @@ var Terminal = function (_Component) {
               { className: "status-bar" },
               _react2.default.createElement(
                 "span",
-                { className: "x-out bar-button" },
+                { className: "x-out bar-button", onClick: this.wiggle },
                 "x"
               ),
               _react2.default.createElement(
                 "span",
-                { className: "expand bar-button" },
+                { className: "expand bar-button", onClick: this.tada },
                 "+"
               ),
               _react2.default.createElement(
@@ -63188,7 +63139,7 @@ var Terminal = function (_Component) {
                   " ",
                   _react2.default.createElement(
                     "a",
-                    { href: "https://github.com/alexcushing", target: "_blank" },
+                    { href: "https://github.com/alexcushing", target: "_blank", rel: "noopener noreferrer" },
                     _react2.default.createElement(
                       "u",
                       null,
@@ -63202,7 +63153,8 @@ var Terminal = function (_Component) {
                     "a",
                     {
                       href: "https://www.linkedin.com/in/alexandercushing/",
-                      target: "_blank"
+                      target: "_blank",
+                      rel: "noopener noreferrer"
                     },
                     _react2.default.createElement(
                       "u",
@@ -65122,11 +65074,11 @@ var ExpCont = function ExpCont() {
       _react2.default.createElement(_Card2.default, {
         cardWhite: false,
         name: "Putnam Investments",
-        desc: "Worked on the mobile team developing internal applications. Built a framework or reusable components and a testing application for this framework.",
+        desc: "Worked on the mobile team developing internal applications. Built a framework of reusable components and a testing application for this framework.",
         photoLink: "https://i.imgur.com/Bhsk273.png",
         color: "blue",
         subtitle: "Mobile Developer Internship",
-        otherInfo: { tech: ["Swift", "Objective C"] },
+        otherInfo: { tech: ["Swift"] },
         hover: false,
         other: { location: "Boston, MA", link: "" }
       })
@@ -65137,41 +65089,7 @@ var ExpCont = function ExpCont() {
 exports.default = ExpCont;
 
 /***/ }),
-/* 894 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(71);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TitleHeader = function TitleHeader(_ref) {
-  var title = _ref.title,
-      colored = _ref.colored;
-  return _react2.default.createElement(
-    "div",
-    { className: colored ? "title-header colored" : "title-header" },
-    _react2.default.createElement(
-      "div",
-      { className: "title-header-name" },
-      title
-    )
-  );
-};
-
-exports.default = TitleHeader;
-
-/***/ }),
+/* 894 */,
 /* 895 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65187,10 +65105,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _semanticUiReact = __webpack_require__(71);
-
-var _reactRouterDom = __webpack_require__(448);
 
 var _reactModal = __webpack_require__(923);
 
@@ -65213,7 +65127,8 @@ var customStyles = {
     top: "9%",
     left: "9%",
     right: "9%",
-    bottom: "9%"
+    bottom: "auto",
+    height: "80%"
   }
 };
 
@@ -65242,7 +65157,7 @@ var Nav = function (_Component) {
     }, _this.select = function (value) {
       if (value) {
         _this.state.menuItems.includes(value.name) ? _this.setState({ selected: value.name }) : console.log("error");
-        if (value.name == "Contact") {
+        if (value.name === "Contact") {
           _this.openModal();
         }
       }
@@ -65309,10 +65224,14 @@ var Nav = function (_Component) {
           },
           _react2.default.createElement(
             "h3",
-            null,
+            { className: "modal-title" },
             "Write me a message!"
           ),
-          _react2.default.createElement(_semanticUiReact.Button, { onClick: this.closeModal, icon: "window close" }),
+          _react2.default.createElement(
+            "button",
+            { className: "x-out-btn", onClick: this.closeModal },
+            "\xD7"
+          ),
           _react2.default.createElement("br", null),
           _react2.default.createElement("br", null),
           _react2.default.createElement(_Contact2.default, null)

@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Menu, Button } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import Contact from "./Contact";
 
@@ -9,7 +7,8 @@ const customStyles = {
     top: "9%",
     left: "9%",
     right: "9%",
-    bottom: "9%"
+    bottom: "auto",
+    height: "80%"
   }
 };
 
@@ -40,7 +39,7 @@ class Nav extends Component {
       this.state.menuItems.includes(value.name)
         ? this.setState({ selected: value.name })
         : console.log("error");
-      if (value.name == "Contact") {
+      if (value.name === "Contact") {
         this.openModal();
       }
     }
@@ -70,8 +69,8 @@ class Nav extends Component {
           style={customStyles}
           contentLabel="Modal"
         >
-        <h3>Write me a message!</h3>
-          <Button onClick={this.closeModal} icon="window close" />
+        <h3 className='modal-title'>Write me a message!</h3>
+          <button className = 'x-out-btn' onClick={this.closeModal}>×</button>
           <br />
           <br />
           <Contact />

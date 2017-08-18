@@ -25,11 +25,11 @@ const ExpCont = () =>
       <Card
         cardWhite={false}
         name="Putnam Investments"
-        desc="Worked on the mobile team developing internal applications. Built a framework or reusable components and a testing application for this framework."
+        desc="Worked on the mobile team developing internal applications. Built a framework of reusable components and a testing application for this framework."
         photoLink="https://i.imgur.com/Bhsk273.png"
         color="blue"
         subtitle="Mobile Developer Internship"
-        otherInfo={{ tech: ["Swift", "Objective C"] }}
+        otherInfo={{ tech: ["Swift"] }}
         hover={false}
         other={{ location: "Boston, MA", link: "" }}
       />
