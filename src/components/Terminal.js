@@ -66,7 +66,7 @@ class Terminal extends Component {
                   <span className="expand bar-button" onClick={this.tada}>
                     +
                   </span>
-                  <span className="minus-down bar-button">
+                  <span className="minus-down bar-button" onClick={this.hide}>
                     -
                   </span>
                 </div>
@@ -80,7 +80,7 @@ class Terminal extends Component {
                     </span>
                     <br />
                     <span className="term-text">
-                      checkout my{" "}
+                      check out my{" "}
                       <a href="https://github.com/alexcushing" target="_blank" rel="noopener noreferrer">
                         <u>Github</u>
                       </a>
