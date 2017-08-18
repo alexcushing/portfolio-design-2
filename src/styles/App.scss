@@ -7,6 +7,7 @@ $darkred: darkred;
 $breakpoint-tablet: 790px;
 $other-tablet: 890px;
 $other-phone: 588px;
+$size-term: calc( 100vw - 40px );
 
 @import "animations";
 
@@ -399,18 +400,25 @@ body {
 
 .bubbleBig {
   position: absolute;
-  bottom: calc(100% - 650px);
-  right: calc(50% - 390px);
+  bottom: calc(100% - 620px);
+  right: calc(50% - 340px);
   background-color: rgb(0%, 1.8%, 21.8%);
   color: white;
   width: 600px;
   height: 400px;
-  margin: 80px;
-  transition: .15s ease;
+  margin: 40px;
+  transition: .25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media screen and (max-width: $other-tablet) {
+      width: $size-term;
+      right: 10px;
+      transition: .5s ease;
+    }
+
 }
 
 .term-text {
